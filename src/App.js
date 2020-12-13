@@ -1,10 +1,15 @@
-import './App.css';
+import React from "react";
+import "./styles/styles.scss";
+import HotelContainer from "./components/HotelContainer";
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <HotelContainer />
+      </div>
+    );
+  }
 }
 
 export default App;

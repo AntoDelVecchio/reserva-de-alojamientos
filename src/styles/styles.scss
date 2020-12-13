@@ -1,0 +1,230 @@
+$breakpoint-xlg: 1440px;
+$breakpoint-lg: 1024px;
+$breakpoint-md: 760px;
+
+@mixin respond-to($medias...) {
+    @each $media in $medias {
+        @if $media == xlg-screen {
+            @media screen and (min-width: $breakpoint-xlg) { @content; }
+        }
+        @else if $media == desktop-screen {
+            @media (min-width: $breakpoint-lg) { @content; }
+        }
+        @else if $media == tablet-screen {
+            @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) { @content; }
+        }
+    }
+}
+
+.App {
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hotel{
+    @include respond-to(desktop-screen, xlg-screen){
+        margin: 0 1.3rem;
+    }
+}
+.header{
+    width: 100%;
+    .header-title{
+        background-color: #38d8c6;
+        color: #FFFFFF;
+        text-align: left;
+        width: 100%;
+        padding: 1rem;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include respond-to(desktop-screen){
+            padding: 1rem 1rem 1rem 5rem;
+        }
+        @include respond-to(xlg-screen){
+            padding: 1rem 1rem 1rem 7rem;
+        }
+        .title{
+            font-size: 2.5rem;
+        }
+        .date-info{
+            color: #FFFFFF;
+            font-size: 1.2rem;
+            height: max-content;
+            width: 100%;
+            border-radius: 10px;
+            font-weight: 700;
+            @include respond-to(tablet-screen, desktop-screen, xlg-screen){
+                max-width: unset;
+            }
+        }
+    }
+
+    .barra-filters{
+        background-color: dodgerblue;
+        display: flex;
+        align-items: center;
+        .filters{
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            input, select{
+                cursor: pointer;
+                border: none;
+                background-color: #FFFFFF;
+            }
+            .input-ctn, .reset-btn{
+                border: 1px solid gainsboro;
+                width: max-content;
+                padding: .2rem;
+                border-radius: 4px;
+                background-color: #FFFFFF;
+                margin: .5rem;
+                .input-icon{
+                    padding: .2rem;
+                    color: gainsboro;
+                }
+                .fa-trash{
+                    padding: .3rem;
+                    color: dodgerblue;
+                }
+            }
+
+            .reset-btn:hover{
+                cursor: pointer;
+                opacity: .8;
+            }
+        }
+    }
+}
+
+.empty-ctn{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    background-color: rgba(248, 248, 255, 0.705);
+    border-radius: 25px;
+    box-shadow: 0 2px 5px 2px white;
+    .fa-globe-americas, .fa-cat, .fa-hotel{
+        font-size: 3rem;
+        color: #38d8c56c;
+    }
+    .empty-message{
+        width: 100%;
+        color: rgba(30, 143, 255, 0.76);
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+.hotels-gallery{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  @include respond-to(tablet-screen, desktop-screen, xlg-screen){
+      flex-flow: row wrap;
+      justify-content: center;
+  }
+    .cardHotel{
+      width: 85%;
+      border: 1px black;
+      background-color: white;
+      box-shadow: 0 2px 5px 1px rgb(172, 172, 172);
+      margin: 1rem;
+      border-radius: 6px;
+      overflow: hidden;
+      @include respond-to(tablet-screen, desktop-screen){
+          width: 40%;
+      }
+      @include respond-to(xlg-screen){
+          width: 20%;
+      }
+      .imageHotel{
+          width: 100%;
+      }
+      .info{
+          display: flex;
+          flex-flow: row wrap;
+          padding: 1rem;
+          .description{
+            text-align: left;
+            margin-bottom: 1rem;
+            .card-title{
+                margin: 1rem 0;
+            }
+          }
+          .additional-data{
+              display: flex;
+              flex-flow: row wrap;
+              max-width: 300px;
+             .location, .capacity{
+                display: inline-flex;
+                background-color: rgba(231, 228, 228, 0.76);
+                height: 2rem;
+                width: max-content;
+                border-radius: 6px;
+                margin: 1rem 0;
+                .icon{
+                    background-color: dodgerblue;
+                    width: 3rem;
+                    font-size: 17px;
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 6px 0 0 6px;
+                }
+                .infoTxt{
+                    font-size:.9rem;
+                    padding: .4rem .5rem;
+                }
+             }
+            .price-icons{
+                background-color: dodgerblue;
+                width: 4.5rem;
+                border-radius: 6px;
+                color: rgba(245, 245, 245, 0.815);
+                font-weight: bolder;
+                text-align: center;
+                height: 2rem;
+                margin: 1rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .fa-dollar-sign{
+                    margin: 0 .15rem;
+                    color: white;
+                }
+                .paint-price{
+                    opacity: .2;
+                }
+             }
+          }
+      }
+      .button{
+        cursor: pointer;
+        width: 100%;
+        border: none;
+        background-color: #38d8c6;
+        height: 3rem;
+        color: whitesmoke;
+        font-weight: 600;
+        font-size: 1rem;
+        &:hover{
+            filter: brightness(105%)
+        }
+      }
+    }
+}
