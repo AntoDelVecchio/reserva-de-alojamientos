@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/reserva-de-alojamientos/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/reserva-de-alojamientos/static/js/main.c8799c99.chunk.js",
+    "main.js.map": "/reserva-de-alojamientos/static/js/main.c8799c99.chunk.js.map",
+    "runtime-main.js": "/reserva-de-alojamientos/static/js/runtime-main.be31a922.js",
+    "runtime-main.js.map": "/reserva-de-alojamientos/static/js/runtime-main.be31a922.js.map",
+    "static/js/2.8f0107e4.chunk.js": "/reserva-de-alojamientos/static/js/2.8f0107e4.chunk.js",
+    "static/js/2.8f0107e4.chunk.js.map": "/reserva-de-alojamientos/static/js/2.8f0107e4.chunk.js.map",
+    "static/js/3.2a90174b.chunk.js": "/reserva-de-alojamientos/static/js/3.2a90174b.chunk.js",
+    "static/js/3.2a90174b.chunk.js.map": "/reserva-de-alojamientos/static/js/3.2a90174b.chunk.js.map",
+    "index.html": "/reserva-de-alojamientos/index.html",
+    "static/css/main.ab7136cd.chunk.css.map": "/reserva-de-alojamientos/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.8f0107e4.chunk.js.LICENSE.txt": "/reserva-de-alojamientos/static/js/2.8f0107e4.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/reserva-de-alojamientos/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.be31a922.js",
+    "static/js/2.8f0107e4.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.c8799c99.chunk.js"
+  ]
+}
